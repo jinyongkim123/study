@@ -21,36 +21,36 @@ public class Main {
         }
 
         int pls = 0;
-        for(int i=0; i<a; i++){
+        for(int i=0; i<a; i++){        //알파벳순으로 정렬한 키에 암호문들 끊어서 삽입
             for(int j = 1; j<b; j++){
                 res[i][j] = sstc[pls++];
             }
         }
 
         Queue<String[]> q = new LinkedList<>();
-        for(int i=0; i<a; i++){
+        for(int i=0; i<a; i++){            //큐에 각 키의 알파벳별로 순서대로 삽입
             q.add(res[i]);
         }
 
         String[] keyword = key.split("");
         pls = 0;
-        while(q.size()!= 0){
-            if(keyword[pls].equals(q.peek()[0])){
-                res[pls] = q.poll();
+        while(q.size()!= 0){                        //큐가 빌 때 까지
+            if(keyword[pls].equals(q.peek()[0])){  //입력한 키워드 글자와 큐의 첫 번째 요소와 같으면 
+                res[pls] = q.poll();               //평문을 만들 배열에 삽입
                 pls++;
             }
             else {
-                q.add(q.poll());
+                q.add(q.poll());                     //같지 않다면 큐의 첫 요소 맨 뒤로 이동
             }
         }
 
-        String result = "";
-        for(int i=1; i<b; i++){
+        String result = "";                          //평문을 넣을 변수 선언
+        for(int i=1; i<b; i++){                    
             for(int j=0; j<a; j++){
-                result += res[j][i];
-            }
+                result += res[j][i];              //키 순서에 맞는 암호문을 result 변수에 넣어주면서
+            }                                     
         }
-        System.out.print(result);
+        System.out.print(result);                  //평문 완성
 
     }
 }
