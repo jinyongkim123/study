@@ -6,21 +6,23 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner stdIn = new Scanner(System.in);
         int N = stdIn.nextInt();
-
-       Queue<Integer> q = new LinkedList<>();
-
+        
+        int[] q = new int[2*N];
+        
        for(int i=1; i<=N; i++){
-           q.add(i);
+           q[i] = i;
+       }
+       int st = 1;
+       int fin = N;
+       
+       while(N-- > 1){
+           st++;
+           q[fin+1] = q[st];
+           fin++;
+           st++;
        }
 
-       while(q.size()!=1){
-           q.poll();
-           q.add(q.poll());
-         
-       }
-
-        System.out.print(q.peek());
-
+        System.out.println(q[st]);
     }
 }
 
