@@ -1,48 +1,37 @@
-import java.math.BigInteger;
-import java.util.*;
-import java.io.*;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-
-
-    public static void main(String[] args) throws Exception {
-        Scanner stdIn = new Scanner(System.in);
-        boolean[] prime = new boolean[10001];
-
-        prime[1] = true;
-
-        int total = 0;
-        int min = -1;
-
-        int M = stdIn.nextInt();
-        int N = stdIn.nextInt();
-
-        for (int i = 2; i <= Math.sqrt(N); i++) {
-            if (prime[i])
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int num1 = Integer.parseInt(br.readLine());
+        int num2 = Integer.parseInt(br.readLine());
+        boolean sosu[] = new boolean[num2+1];
+        sosu[1] = true;
+        for(int i=2;i<Math.sqrt(num2);i++){
+            if(sosu[i])
                 continue;
-            for (int j = i * 2; j <= N; j += i) {
-                prime[j] = true;
+            for(int j=i*2;j<=num2;j+=i){
+                sosu[j] = true;
             }
         }
-
-        for (int i = M; i <= N; i++) {
-            if (!prime[i]) {
-                total += i;
-                if (min == -1) {
+        int min=-1;
+        int sum = 0;
+        for(int i=num1;i<=num2;i++){
+            if(!sosu[i]){
+                sum +=i;
+                if(min==-1){
                     min = i;
                 }
             }
         }
-
-        if (total == 0)
+        if(min==-1){
             System.out.println(-1);
-        else {
-            System.out.println(total);
+        }
+        else{
+            System.out.println(sum);
             System.out.println(min);
         }
     }
 }
-
-
-
