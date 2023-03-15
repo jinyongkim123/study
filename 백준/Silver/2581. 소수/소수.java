@@ -18,24 +18,26 @@ public class Main {
         int M = stdIn.nextInt();
         int N = stdIn.nextInt();
 
-        for (int i = 2; i <= N; i++) {
-            for (int j = 2; i * j <= N; j++) {
-                prime[i * j] = true;
+        for (int i = 2; i <= Math.sqrt(N); i++) {
+            if (prime[i])
+                continue;
+            for (int j = i * 2; j <= N; j += i) {
+                prime[j] = true;
             }
         }
 
         for (int i = M; i <= N; i++) {
             if (!prime[i]) {
                 total += i;
-                if(min == -1){
+                if (min == -1) {
                     min = i;
                 }
             }
         }
 
-        if(total == 0)
+        if (total == 0)
             System.out.println(-1);
-        else{
+        else {
             System.out.println(total);
             System.out.println(min);
         }
