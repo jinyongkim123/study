@@ -5,31 +5,23 @@ import java.io.*;
 
 public class Main {
 
+    public static boolean[] prime = new boolean[10001];
 
     public static void main(String[] args) throws Exception {
         Scanner stdIn = new Scanner(System.in);
 
+        get_prime();
         int t = stdIn.nextInt();
 
-        for (int i = 0; i < t; i++) {
+        while (t-- > 0) {
             int a = stdIn.nextInt();
-
-            int[] prime = new int[a + 1];
-
-            prime[1] = 1;
-
-            for (int j = 2; j <= a; j++) {
-                for (int k = 2; j * k <= a; k++) {
-                    prime[j * k] = 1;
-                }
-            }
-
             int p = a / 2;
             int q = a / 2;
 
+
             while (true) {
-                if (prime[p] == 0 && prime[q] == 0) {
-                    System.out.print(p + " " + q + "\n");
+                if (prime[p] == false && prime[q] == false) {
+                    System.out.println(p + " " + q);
                     break;
                 }
                 p--;
@@ -37,6 +29,18 @@ public class Main {
             }
         }
 
+    }
+
+    public static void get_prime() {
+        prime[0] = prime[1] = true;
+
+        for (int i = 2; i <= Math.sqrt(prime.length); i++) {
+            if (prime[i])
+                continue;
+            for (int j = i * i; j < prime.length; j += i) {
+                prime[j] = true;
+            }
+        }
     }
 }
 
