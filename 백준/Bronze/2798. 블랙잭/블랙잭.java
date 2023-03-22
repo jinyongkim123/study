@@ -1,34 +1,33 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
+    public static void main(String[] args) {
+        Scanner stdIn = new Scanner(System.in);
 
-	
-	public static void main(String[] args) {
-		Scanner card = new Scanner(System.in);
-		
-		int N = card.nextInt();
-		int M = card.nextInt();
-		
-		int result = 0;
-		
-		
-		int []arr = new int[N];
-		
-		for(int i = 0; i<N; i++) {
-			arr[i]=card.nextInt();
-		}
-		for(int i=0; i<N-2; i++) {
-			for(int j= i+1; j<N;j++) {
-				for(int k=j+1;k<N;k++) {
-					int temp =arr[i] + arr[j]+arr[k];
-					
-					if(result < temp && temp <= M) {
-						result = temp;
-					}
-				}
-			}
-		}
-		System.out.println(result);
-	}
+        int ctotal = stdIn.nextInt();
+        int cnumber = stdIn.nextInt();
+        int[] ary = new int[ctotal];
 
+        int result = 0;
+
+        for (int i = 0; i < ctotal; i++) {
+            ary[i] = stdIn.nextInt();
+        }
+
+        for (int i = 0; i < ctotal - 2; i++) {
+
+            for (int j = i + 1; j < ctotal; j++) {
+
+                for (int k = j + 1; k < ctotal; k++) {
+                    int temp = ary[i] + ary[j] + ary[k];
+
+                    if(result<temp && temp <= cnumber){
+                        result = temp;
+                    }
+
+                }
+            }
+        }
+        System.out.println(result);
+    }
 }
