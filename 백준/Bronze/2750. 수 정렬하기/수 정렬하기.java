@@ -1,29 +1,19 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner stdIn = new Scanner(System.in);
-        int N = stdIn.nextInt();
-        int[] ary = new int[N];
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
 
-        for (int i = 0; i < N; i++) {
-            ary[i] = stdIn.nextInt();
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
         }
 
-        //버블정렬
-        for (int i = N - 1; i >= 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (ary[j] > ary[j + 1]) {
-                    int temp = ary[j];
-                    ary[j] = ary[j + 1];
-                    ary[j + 1] = temp;
-                }
-            }
-        }
+        Arrays.sort(arr);
 
-        for(int i=0; i<ary.length; i++){
-            System.out.println(ary[i]);
+        for (int i = 0; i < n; i++) {
+            System.out.println(arr[i]);
         }
-
     }
 }
