@@ -12,15 +12,18 @@ public class Main {
             total += ary[i];
         }
 
-        //버블정렬
-        for (int i = 4; i >= 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (ary[j] > ary[j + 1]) {
-                    int temp = ary[j];
-                    ary[j] = ary[j + 1];
-                    ary[j + 1] = temp;
+        //선택정렬로 배열 오름차순 정렬해주기
+        for(int i=0; i<ary.length-1; i++){
+            int midindex = i;
+            for(int j=i+1; j<ary.length; j++){//피봇 다음 배열이 더 작다면은?
+                if(ary[j]<ary[midindex]){
+                    midindex=j;
                 }
             }
+            int temp = ary[i];
+            ary[i] = ary[midindex];
+            ary[midindex] = temp;
+
         }
 
         System.out.println(total / 5);
