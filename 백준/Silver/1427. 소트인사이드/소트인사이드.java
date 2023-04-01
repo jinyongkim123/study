@@ -8,27 +8,26 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String n = br.readLine();
 
-        int[] ary2 = new int[n.length()];
+        int[] ary = new int[n.length()];
 
-        for (int i = 0; i < ary2.length; i++) {
+        for (int i = 0; i < ary.length; i++) {
             //Character.getNumericValue()메서드와 charAt()메서드를 이용해 문자열을 숫자 배열로 변환
-            ary2[i] = Character.getNumericValue(n.charAt(i));
+            ary[i] = Character.getNumericValue(n.charAt(i));
         }
-        //선택정렬
-        for (int i = 0; i < ary2.length - 1; i++) {
-            int index = i;
-            for (int j = i + 1; j < ary2.length; j++) {
-                if (ary2[index] < ary2[j]) {
-                    index = j;
+        //버블 정렬
+
+        for(int i=ary.length - 1; i>=0; i--){
+            for(int j = 0 ; j<i; j++){
+                if(ary[j] < ary[j+1]){
+                    int temp = ary[j];
+                    ary[j] = ary[j+1];
+                    ary[j+1] = temp;
                 }
             }
-           int temp = ary2[i];
-            ary2[i] = ary2[index];
-            ary2[index] = temp;
         }
 
-        for(int i=0; i<ary2.length; i++){
-            System.out.print(ary2[i]);
+        for(int i=0; i<ary.length; i++){
+            System.out.print(ary[i]);
         }
     }
 
