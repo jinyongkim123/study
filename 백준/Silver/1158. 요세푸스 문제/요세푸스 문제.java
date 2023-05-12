@@ -9,7 +9,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         Queue<Integer> queue = new LinkedList<>();
-        Queue<Integer> queue2 = new LinkedList<>();
         int n = sc.nextInt();
         int k = sc.nextInt();
 
