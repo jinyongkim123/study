@@ -13,7 +13,7 @@ public class Main {
         int k = sc.nextInt();
 
         for(int i=1; i<=n; i++){
-            queue.offer(i);
+            queue.add(i);
         }
 
         sb.append("<");
