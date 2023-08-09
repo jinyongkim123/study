@@ -7,23 +7,23 @@ public class Main {
         int b = sc.nextInt();
 
         for(int i = a; i <= b; i++){
-            if(sosu(i) != 0){
-                System.out.println(sosu(i));
+            if(sosu(i)){
+                System.out.println(i);
             }
         }
 
 
     }
     // 소수 판별 함수
-    static int sosu(int num) {
+    static boolean sosu(int num) {
         if (num <= 1) {
-            return 0;
+            return false;
         }
         for (int i = 2; i * i <= num; i++) {
             if (num % i == 0) {
-                return 0;
+                return false;
             }
         }
-        return num;
+        return true;
     }
 }
