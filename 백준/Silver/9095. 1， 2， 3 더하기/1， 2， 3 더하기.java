@@ -4,27 +4,20 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        int num = sc.nextInt();
+        int[] dp = new int[12];
 
-        int[] dp = new int[11];
-
-        dp[0] = 0;
         dp[1] = 1;
         dp[2] = 2;
         dp[3] = 4;
-
-        for (int i = 0; i < n; i++) {
-            int num = sc.nextInt();
-
-            for (int j = 4; j <= num; j++) {
-                dp[j] = dp[j - 1] + dp[j - 2] + dp[j - 3];
+        dp[4] = 7;
+        for (int i = 0; i < num; i++) {
+            int a = sc.nextInt();
+            for(int j = 5; j<=a; j++){
+                dp[j] = dp[j-1] + dp[j-2] + dp[j-3];
             }
-
-            System.out.println(dp[num]);
+            System.out.println(dp[a]);
         }
 
-
     }
-
-
 }
