@@ -7,7 +7,6 @@ public class Main {
         int N = sc.nextInt();
         int[] dp1 = new int[N];
         int[] dp2 = new int[N];
-        int[] ldp = new int[N];
         int[] arr = new int[N];
 
         for (int i = 0; i < N; i++) {
