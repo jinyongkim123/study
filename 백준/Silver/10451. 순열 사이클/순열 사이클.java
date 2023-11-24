@@ -30,15 +30,6 @@ public class Main {
 
     }
 
-    /* ---- dfs 버전 ----*/
-//    public static void dfs(int x){
-//        check[graph[x]] = 1; // 들어왔으니 일단 방문표시
-//
-//        if(!(check[graph[x]]==1)){//만약 방문을 하지 않았다면?
-//            dfs(graph[x]);  //
-//        }
-//    }
-
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -67,7 +58,16 @@ public class Main {
 
     }
 
-
+    /* ---- dfs 버전 ----*/
+//    public static void dfs(int x){
+//        check[graph[x]] = 1; // 들어왔으니 일단 방문표시
+//
+//        if(!(check[graph[x]]==1)){//만약 방문을 하지 않았다면?
+//            dfs(graph[x]);  //
+//        }
+//    }
+    
+    
     /* ---- dfs 버전 ---- */
 //    public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
