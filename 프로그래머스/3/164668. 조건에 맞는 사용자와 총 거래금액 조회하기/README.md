@@ -1,6 +1,6 @@
 # [level 3] 조건에 맞는 사용자와 총 거래금액 조회하기 - 164668 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/164668?language=mysql) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/164668) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@ Empty
 
 ### 제출 일자
 
-2024년 2월 1일 20:28:14
+2024년 02월 23일 16:23:08
 
 ### 문제 설명
 
