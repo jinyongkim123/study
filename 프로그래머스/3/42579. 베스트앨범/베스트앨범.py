@@ -13,29 +13,24 @@ def solution(genres, plays):
         genresnumbering.append([i, genres[i], plays[i]])
     
     genrestotal = sorted(genrestotal, key = genrestotal.get, reverse=True)
-    genresnumbering = sorted(genresnumbering, key = lambda x : -x[2])
+    genresnumbering = sorted(genresnumbering, key = lambda x : x[2], reverse = True)
     
     answer = []
     
     for i in genrestotal:
         cnt = 0
-        
         for j in range(len(genresnumbering)):
             if i == genresnumbering[j][1]:
                 cnt += 1
                 if cnt == 3:
                     break
                 answer.append(genresnumbering[j][0])
-                
-            
+    return answer           
 #     print(genrestotal)
-    
-    
 #     print(genresnumbering)
+#     print(answer)
     
-    print(answer)
     
-    return answer
     
 
     
