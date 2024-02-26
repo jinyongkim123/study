@@ -1,4 +1,3 @@
 def solution(sides):
     sides.sort()
-    if sides.pop() >= sum(sides): return 2
-    return 1 
+    return 1 if sides.pop() < sum(sides) else 2
