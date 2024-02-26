@@ -12,5 +12,4 @@ def solution(price):
     elif(price < 100000):
         answer = price
         
-    # return math.trunc(answer)
-    return math.trunc(answer)
+    return int(answer)
